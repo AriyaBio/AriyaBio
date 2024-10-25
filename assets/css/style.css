@@ -37,19 +37,19 @@ html, body {
 
 /* Background Images for each section */
 #home {
-  background: url('../images/home.jpg') no-repeat center center/cover;
+  background: url('../images/backgrounds/home.jpg') no-repeat center center/cover;
 }
 
 #technology {
-  background: url('../images/technology.jpg') no-repeat center center/cover;
+  background: url('../images/backgrounds/technology.jpg') no-repeat center center/cover;
 }
 
 #programs {
-  background: url('../images/programs.jpg') no-repeat center center/cover;
+  background: url('../images/backgrounds/programs.jpg') no-repeat center center/cover;
 }
 
 #team {
-  background: url('../images/team.jpg') no-repeat center center/cover;
+  background: url('../images/backgrounds/team.jpg') no-repeat center center/cover;
 }
 
 /* Header Navigation */
@@ -99,6 +99,71 @@ nav ul li a:hover {
   border-radius: 2px;
   transition: all 0.3s ease;
 }
+
+.logo-image {
+  width: 75vh;
+  height: auto; /* This ensures the image maintains its aspect ratio */
+  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 5px white);
+}
+
+#team {
+  background-color: hsl(0, 85%, 29%); /* Light background color for contrast */
+  padding: 50px 0; /* Spacing around the section */
+  text-align: center; /* Center the content */
+}
+
+#team h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #800505;
+}
+
+#team h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #800505;
+}
+
+#team p {
+  font-size: 18px;
+  color: #800505;
+  margin-bottom: 40px;
+}
+
+.team-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  max-width: 200px;
+  text-align: center;
+}
+
+.team-photo {
+  width: 100%;
+  border-radius: 50%; /* Circular team photos */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-photo:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team-member h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #777;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

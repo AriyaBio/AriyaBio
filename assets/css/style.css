@@ -8,12 +8,13 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Prevent default scroll */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scroll for a better UX */
 }
 
 /* Full-page sections */
 .section {
-  height: 100vh;
+  min-height: 100vh; /* Use min-height instead of height for better mobile compatibility */
   width: 100vw;
   position: absolute;
   top: 0;
@@ -24,10 +25,9 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 1s ease-in-out, visibility 0s 1s; /* Fade in/out */
+  transition: opacity 1s ease-in-out, visibility 0s 1s;
 }
 
-/* Active Section */
 .section.active {
   opacity: 1;
   visibility: visible;
@@ -50,6 +50,9 @@ html, body {
 
 #team {
   background: url('../images/backgrounds/team.jpg') no-repeat center center/cover;
+  background-color: hsl(0, 85%, 29%);
+  padding: 50px 0;
+  text-align: center;
 }
 
 /* Header Navigation */
@@ -59,7 +62,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5); /* Transparent header */
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -83,7 +86,7 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Hamburger Icon (hidden by default) */
+/* Hamburger Icon for mobile */
 .menu-icon {
   display: none;
   width: 30px;
@@ -101,32 +104,29 @@ nav ul li a:hover {
 }
 
 .logo-image {
-  width: 75vh;
-  height: auto; /* This ensures the image maintains its aspect ratio */
+  width: 50%; /* Adjusted width for responsiveness */
+  max-width: 400px; /* Prevents oversized logos */
+  height: auto; /* Maintain aspect ratio */
   filter: drop-shadow(0 0 5px white) drop-shadow(0 0 5px white);
 }
 
-#team {
-  background-color: hsl(0, 85%, 29%); /* Light background color for contrast */
-  padding: 50px 0; /* Spacing around the section */
-  text-align: center; /* Center the content */
+/* Team section */
+#team h1, #team h3, #team p {
+  color: #800505;
 }
 
 #team h1 {
-  font-size: 36px;
+  font-size: 2.5rem; /* Use relative units for better scaling */
   margin-bottom: 20px;
-  color: #800505;
 }
 
 #team h3 {
-  font-size: 24px;
+  font-size: 1.75rem;
   margin-bottom: 20px;
-  color: #800505;
 }
 
 #team p {
-  font-size: 18px;
-  color: #800505;
+  font-size: 1.25rem;
   margin-bottom: 40px;
 }
 
@@ -144,28 +144,27 @@ nav ul li a:hover {
 
 .team-photo {
   width: 100%;
-  border-radius: 50%; /* Circular team photos */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 }
 
 .team-photo:hover {
-  transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05);
 }
 
 .team-member h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #333;
   margin: 10px 0 5px;
 }
 
 .team-member p {
-  font-size: 16px;
+  font-size: 1rem;
   color: #777;
 }
 
-
-/* Responsive adjustments */
+/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -188,23 +187,11 @@ nav ul li a:hover {
     top: 15px;
     right: 20px;
   }
-}
 
-/* Content inside each section */
-.content {
-  color: white;
-  text-align: center;
-}
+  .logo-image {
+    width: 70%; /* Reduced logo size for smaller screens */
+  }
 
-h1 {
-  font-size: 3em;
-}
-
-p {
-  font-size: 1.5em;
-}
-
-@media (max-width: 768px) {
   h1 {
     font-size: 2em;
   }
@@ -220,5 +207,59 @@ p {
   nav ul li {
     margin: 10px 0;
   }
+
+  .team-container {
+    flex-direction: column;
+  }
 }
 
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .logo-image {
+    width: 90%; /* Further reduce logo size on smaller screens */
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  #team h1 {
+    font-size: 1.75rem;
+  }
+
+  #team h3 {
+    font-size: 1.5rem;
+  }
+
+  #team p {
+    font-size: 1rem;
+  }
+}
+
+/* Content inside each section */
+.content {
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem; /* Use relative units for scalability */
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}

@@ -23,6 +23,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, hr, bl
   padding: 0;
 }
 
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -103,6 +104,9 @@ img.round {
 }
 img.rounded {
   border-radius: 6px;
+}
+img.homepagelogo {
+  width: 60%;
 }
 
 .slides {
@@ -351,6 +355,10 @@ small .small {
   .mobileCropRight {
     margin-right: 0 !important;
   }
+
+  img.homepagelogo {
+    width: 80%;
+  }
 }
 @media (max-width: 319px) {
   h1.huge,
@@ -358,6 +366,12 @@ small .small {
   h1.big,
   .h1.big {
     font-size: 32px;
+  }
+  h2.small {
+    font-size: 24px;
+  }
+  img.homepagelogo {
+    width: 100%;
   }
 }
 /* buttons */
